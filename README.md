@@ -2,7 +2,9 @@
 
 Gradle plugin for creating tapestry 5.4 structure
 
-build.gradle sample
+**this plugin hasn't been published to maven central**
+
+build.gradle sample 
 
 ```java
 apply plugin: 'net.mreunionlabs.tapgradle.generate'
