@@ -4,6 +4,7 @@ Gradle plugin for creating tapestry 5.4 structure
 
 build.gradle sample
 
+```java
 apply plugin: 'net.mreunionlabs.tapgradle.generate'
 
 buildscript {
@@ -15,3 +16,4 @@ buildscript {
         classpath 'net.mreunionlabs:TapGradle:1.0-SNAPSHOT'
     }
 }
+```
