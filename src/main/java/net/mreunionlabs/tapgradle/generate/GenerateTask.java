@@ -1,7 +1,6 @@
 package net.mreunionlabs.tapgradle.generate;
 
 import net.mreunionlabs.tapgradle.generate.generator.AppModuleGenerator;
-import net.mreunionlabs.tapgradle.generate.generator.JAppModuleGenerator;
 import net.mreunionlabs.tapgradle.generate.generator.ManifestGenerator;
 import net.mreunionlabs.tapgradle.generate.generator.StructureGenerator;
 import org.gradle.api.DefaultTask;
@@ -28,7 +27,7 @@ public class GenerateTask extends DefaultTask{
         ManifestGenerator manifestGenerator = new ManifestGenerator();
         manifestGenerator.createFile(ext);
 
-        JAppModuleGenerator appModuleGenerator = new JAppModuleGenerator();
+        AppModuleGenerator appModuleGenerator = new AppModuleGenerator();
         appModuleGenerator.createFile(ext);
 
 
