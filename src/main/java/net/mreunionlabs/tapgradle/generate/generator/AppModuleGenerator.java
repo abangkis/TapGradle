@@ -1,9 +1,8 @@
 package net.mreunionlabs.tapgradle.generate.generator;
 
-import com.helger.jcodemodel.JClassAlreadyExistsException;
-import com.helger.jcodemodel.JCodeModel;
-import com.helger.jcodemodel.JDefinedClass;
+import com.helger.jcodemodel.*;
 import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension;
+import org.apache.tapestry5.ioc.ServiceBinder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,9 +25,17 @@ public class AppModuleGenerator {
         if (packageString != null && !"".equals(packageString)) {
             JCodeModel codeModel = new JCodeModel();
             try {
-                JDefinedClass definedClass = codeModel._class(packageString + ".AppModule");
                 File javaFolder = new File(ext.getJavaDir());
                 javaFolder.mkdirs();
+
+                JDefinedClass definedClass = codeModel._class(packageString + ".AppModule");
+
+                JMethod bindMethod = definedClass.method(JMod.PUBLIC | JMod.STATIC,
+                        Void.TYPE,
+                        "bind");
+
+                bindMethod.param(ServiceBinder.class, "binder");
+
                 codeModel.build(javaFolder);
             } catch (JClassAlreadyExistsException e) {
                 e.printStackTrace();
