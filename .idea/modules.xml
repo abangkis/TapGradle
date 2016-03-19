@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TapGradle.iml" filepath="$PROJECT_DIR$/TapGradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TapGradle.iml" filepath="$PROJECT_DIR$/.idea/modules/TapGradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TapGradle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/TapGradle_main.iml" group="TapGradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TapGradle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/TapGradle_test.iml" group="TapGradle" />
     </modules>
   </component>
 </project>

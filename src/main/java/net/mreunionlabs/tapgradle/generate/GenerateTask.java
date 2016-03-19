@@ -1,17 +1,17 @@
 package net.mreunionlabs.tapgradle.generate;
 
+import net.mreunionlabs.tapgradle.generate.generator.AppModuleGenerator;
+import net.mreunionlabs.tapgradle.generate.generator.JAppModuleGenerator;
+import net.mreunionlabs.tapgradle.generate.generator.ManifestGenerator;
+import net.mreunionlabs.tapgradle.generate.generator.StructureGenerator;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.TaskAction;
-
-import java.io.*;
 
 /**
  * Created by abangkis on 21/02/2016.
  */
 public class GenerateTask extends DefaultTask{
     String greeting = "Generating Tapestry 5.4 structure";
-    private static final String METAINF = "META-INF";
-    private static final String MANIFEST = "MANIFEST.MF";
 
     @TaskAction
     public void generate() {
@@ -21,7 +21,17 @@ public class GenerateTask extends DefaultTask{
         }
 
         System.out.println(greeting);
-        createDirectories(ext);
+
+        StructureGenerator structureGenerator = new StructureGenerator();
+        structureGenerator.createDirectories(ext);
+
+        ManifestGenerator manifestGenerator = new ManifestGenerator();
+        manifestGenerator.createFile(ext);
+
+        JAppModuleGenerator appModuleGenerator = new JAppModuleGenerator();
+        appModuleGenerator.createFile(ext);
+
+
 
 //
 //        String message = extension.getMessage();
@@ -29,43 +39,6 @@ public class GenerateTask extends DefaultTask{
 //        System.out.println(helloWorld.greet());
     }
 
-    private void createDirectories(GeneratePluginExtension ext) {
-        File f = new File(ext.getJavaDir());
-        f.mkdir();
-        createResourceDir(ext);
-        f = new File(ext.getWebAppDir());
-        f.mkdir();
-    }
-
-    private void createResourceDir(GeneratePluginExtension ext) {
-        File metaInf = new File(ext.getResDir(), METAINF);
-        metaInf.mkdirs();
-
-        File assets = new File(metaInf, "assets");
-        assets.mkdir();
-
-        // create css, images and js folder
-        new File(assets, "css").mkdir();
-        new File(assets, "images").mkdir();
-        new File(assets, "js").mkdir();
-
-        createManifest(assets);
-
-        File modules = new File(metaInf, "modules");
-        modules.mkdir();
-    }
-
-    private void createManifest(File assets) {
-        File manifest = new File(assets, MANIFEST);
-
-        try (PrintWriter writer = new PrintWriter(manifest)) {
-            writer.println("Manifest-Version: 1.0");
-            writer.println("Class-Path: ");
-            writer.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
 //    task copyWebapp(type: Copy){
 //        println "Copying web files from ${webSourceDir} to ${webappDir}"

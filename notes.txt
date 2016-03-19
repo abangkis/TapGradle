@@ -1,0 +1,4 @@
+// install to maven local using gradle install
+
+// import eclipse todo
+we should import it and put the .properties file to the appropriate folder

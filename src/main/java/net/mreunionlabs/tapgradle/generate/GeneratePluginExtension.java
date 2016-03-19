@@ -1,5 +1,7 @@
 package net.mreunionlabs.tapgradle.generate;
 
+import java.io.File;
+
 /**
  * Created by abangkis on 21/02/2016.
  */
@@ -8,7 +10,9 @@ public class GeneratePluginExtension {
     private String resDir = "src/main/resources";
     private String webAppDir = "src/main/webapp";
 
-    private String packagePath;
+    private String packageString;
+
+    private File assetFolder;
 
     public String getJavaDir() {
         return javaDir;
@@ -34,11 +38,19 @@ public class GeneratePluginExtension {
         this.webAppDir = webAppDir;
     }
 
-    public String getPackagePath() {
-        return packagePath;
+    public String getPackageString() {
+        return packageString;
     }
 
-    public void setPackagePath(String packagePath) {
-        this.packagePath = packagePath;
+    public void setPackageString(String packageString) {
+        this.packageString = packageString;
+    }
+
+    public File getAssetFolder() {
+        return assetFolder;
+    }
+
+    public void setAssetFolder(File assetFolder) {
+        this.assetFolder = assetFolder;
     }
 }
