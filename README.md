@@ -19,3 +19,24 @@ buildscript {
     }
 }
 ```
+
+default usage. Create a gradle project. Add this code to the build.gradle 
+```groovy
+apply plugin: 'net.mreunionlabs.tapgradle.generate'
+
+genExt {
+    packageString = "net.mreunionlabs.tpu"
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'net.mreunionlabs:TapGradle:1.0-SNAPSHOT'
+    }
+}
+```
+
+[markdown link](https://guides.github.com/features/mastering-markdown/)
