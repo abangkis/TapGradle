@@ -1,4 +1,22 @@
+Update task to
+- TapGenBasic
+- TapGenPlain
+- TapGenStructure
+
+- app module masih di package yg salah
+- generate directory untuk resources
+- generate HMac Key (add tasknya juga biar bisa dipake diluar gen)
+- ext:
++ hibernate option
++ basic user management option
++ User SSO and it's implementation
+- generate public page, and protection filter annotation
+- Generate Layout component
+- RequireJS sample
+
+
 // install to maven local using gradle install
 
 // import eclipse todo
 we should import it and put the .properties file to the appropriate folder
+
