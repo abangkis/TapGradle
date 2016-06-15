@@ -36,7 +36,7 @@ public class AppModuleGenerator {
                 File javaFolder = new File(ext.getJavaDir());
                 javaFolder.mkdirs();
 
-                JDefinedClass dc = cm._class(packageString + ".AppModule");
+                JDefinedClass dc = cm._class(packageString + ".services.AppModule");
 
 
 //                writeIfElse(cm, dc);
