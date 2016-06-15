@@ -18,7 +18,10 @@ import java.security.NoSuchAlgorithmException;
 public class HMACGenerator {
 
 	private static final String HMAC_SHA1_ALGORITHM = "HmacSHA1";
-    
+
+	public HMACGenerator() {
+	}
+
 	public HMACGenerator(String key, String salt) {
 		try {
 			System.out.println("HMAC Key: " + computeHmac(key, salt));
