@@ -1,6 +1,7 @@
 package net.mreunionlabs.tapgradle.generate.generator;
 
 import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension;
+import net.mreunionlabs.tapgradle.generate.util.PackageDirectoryCreator;
 
 import java.io.File;
 
@@ -34,5 +35,15 @@ public class StructureGenerator {
 
         File modules = new File(metaInf, "modules");
         modules.mkdir();
+
+        File resDir = new File(ext.getResDir());
+        String packageString = ext.getPackageString();
+        File packageRoot = PackageDirectoryCreator.createPackageDir(resDir, packageString);
+
+        File components = new File(packageRoot, "components");
+        components.mkdir();
+        File pages = new File(packageRoot, "pages");
+        pages.mkdir();
+
     }
 }
