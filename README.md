@@ -20,7 +20,7 @@ buildscript {
 }
 ```
 
-default usage. Create a gradle project. Add this code to the build.gradle 
+default usage. Create a gradle project. Add this code to the build.gradle. Don't forget to change the packageString with your own package. 
 ```groovy
 apply plugin: 'net.mreunionlabs.tapgradle.generate'
 
