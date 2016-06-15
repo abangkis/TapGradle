@@ -1,6 +1,7 @@
 # TapGradle
 
-Gradle plugin for creating tapestry 5.4 structure
+Gradle plugin for creating tapestry 5.4 structure. It will generate the necessarry file such as
+- AppModule.java (Including random HMAC Pass phrase)
 
 **this plugin hasn't been published to maven central**
 
