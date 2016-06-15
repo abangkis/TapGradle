@@ -1,6 +1,7 @@
 package net.mreunionlabs.tapgradle.generate;
 
 import net.mreunionlabs.tapgradle.generate.generator.AppModuleGenerator;
+import net.mreunionlabs.tapgradle.generate.generator.JavaStructureGenerator;
 import net.mreunionlabs.tapgradle.generate.generator.ManifestGenerator;
 import net.mreunionlabs.tapgradle.generate.generator.StructureGenerator;
 import org.gradle.api.DefaultTask;
@@ -30,7 +31,8 @@ public class GenerateTask extends DefaultTask{
         AppModuleGenerator appModuleGenerator = new AppModuleGenerator();
         appModuleGenerator.createFile(ext);
 
-
+        JavaStructureGenerator javaStructureGenerator = new JavaStructureGenerator();
+        javaStructureGenerator.createDirectories(ext);
 
 //
 //        String message = extension.getMessage();
