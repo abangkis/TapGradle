@@ -18,6 +18,7 @@ apply plugin: 'net.mreunionlabs.tapgradle.generate'
 
 genExt {
     packageString = "net.mreunionlabs.sample"
+    webDisplayName = "Tap Gradle By MReunionlabs"
 }
 
 repositories {

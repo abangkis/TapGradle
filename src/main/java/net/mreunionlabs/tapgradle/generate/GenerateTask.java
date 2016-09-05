@@ -1,9 +1,6 @@
 package net.mreunionlabs.tapgradle.generate;
 
-import net.mreunionlabs.tapgradle.generate.generator.AppModuleGenerator;
-import net.mreunionlabs.tapgradle.generate.generator.JavaStructureGenerator;
-import net.mreunionlabs.tapgradle.generate.generator.ManifestGenerator;
-import net.mreunionlabs.tapgradle.generate.generator.StructureGenerator;
+import net.mreunionlabs.tapgradle.generate.generator.*;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.TaskAction;
 
@@ -34,6 +31,8 @@ public class GenerateTask extends DefaultTask{
         JavaStructureGenerator javaStructureGenerator = new JavaStructureGenerator();
         javaStructureGenerator.createDirectories(ext);
 
+        WebXMLGenerator webXMLGenerator = new WebXMLGenerator();
+        webXMLGenerator.createFile(ext);
 //
 //        String message = extension.getMessage();
 //        HelloWorld helloWorld = new HelloWorld(message);

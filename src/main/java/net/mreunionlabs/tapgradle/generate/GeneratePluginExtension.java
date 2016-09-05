@@ -10,7 +10,9 @@ public class GeneratePluginExtension {
     private String resDir = "src/main/resources";
     private String webAppDir = "src/main/webapp";
 
+    // fields from user
     private String packageString;
+    private String webDisplayName = "Tap Gradle By MReunionlabs";
 
     private File assetFolder;
 
@@ -44,6 +46,14 @@ public class GeneratePluginExtension {
 
     public void setPackageString(String packageString) {
         this.packageString = packageString;
+    }
+
+    public String getWebDisplayName() {
+        return webDisplayName;
+    }
+
+    public void setWebDisplayName(String webDisplayName) {
+        this.webDisplayName = webDisplayName;
     }
 
     public File getAssetFolder() {
