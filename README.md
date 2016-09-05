@@ -5,23 +5,13 @@ Gradle plugin for creating tapestry 5.4 structure. It will generate the necessar
 
 **this plugin hasn't been published to maven central**
 
-build.gradle sample 
+Because this plugin hasn't been publish to maven central, you need to publish it your self to your maven local repository
+* open the gradle window in TapGradle Project
+* Task > Other
+* Right click and run Install (task)
 
-```java
-apply plugin: 'net.mreunionlabs.tapgradle.generate'
+After you install it to your local maven. Create your new gradle project. Add this code to the build.gradle. Don't forget to change the packageString with your own package. 
 
-buildscript {
-    repositories {
-        mavenCentral()
-        mavenLocal()
-    }
-    dependencies {
-        classpath 'net.mreunionlabs:TapGradle:1.0-SNAPSHOT'
-    }
-}
-```
-
-default usage. Create a gradle project. Add this code to the build.gradle. Don't forget to change the packageString with your own package. 
 ```groovy
 apply plugin: 'jetty' // include java and war plugin
 apply plugin: 'net.mreunionlabs.tapgradle.generate'
@@ -59,5 +49,9 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 ```
+
+* Open the gradle window, refresh it, 
+* Task > Other
+* Run genStructure (Task)
 
 [markdown link](https://guides.github.com/features/mastering-markdown/)
