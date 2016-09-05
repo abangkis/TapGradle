@@ -57,7 +57,9 @@ public class WebXMLGenerator {
             xmlOutput.setFormat(Format.getPrettyFormat());
 
             File webAppDir = new File(ext.getWebAppDir());
-            File webXml = new File(webAppDir, "web.xml");
+            File webInf = new File(webAppDir, "WEB-INF");
+            webInf.mkdirs();
+            File webXml = new File(webInf, "web.xml");
 
             xmlOutput.output(doc, new FileWriter(webXml));
 
