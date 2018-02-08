@@ -18,8 +18,8 @@ apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.p
 apply plugin: 'net.mreunionlabs.tapgradle.generate'
 
 genExt {
-    packageString = "net.mreunionlabs.gri"
-    webDisplayName = "Gotong Royong Indonesia"
+    packageString = "net.mreunionlabs.sample"
+    webDisplayName = "Tap Gradle By MReunionlabs"
 }
 
 repositories {
