@@ -1,0 +1,10 @@
+# Default ignored files
+.idea/
+.gradle/
+gradle/
+build/
+out/
+
+glob:*.iml
+glob:*.log
+
