@@ -12,6 +12,7 @@ class StructureGenerator {
 
     fun createDirectories(ext: GeneratePluginExtension) {
         var f = File(ext.javaDir)
+        println("java dir ${f.absolutePath}")
         f.mkdir()
         createResourceDir(ext)
         f = File(ext.webAppDir)

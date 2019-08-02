@@ -16,13 +16,12 @@ public class GenerateTaskTest {
 
     @BeforeMethod
     public void setUp() throws Exception {
-
-        Project project = ProjectBuilder.builder().build();
-        genTask = project.getTasks().create("genStructure", GenerateTask.class);
-
         ext = new GeneratePluginExtension();
         ext.setPackageString("net.mreunionlabs.test");
         ext.setJavaDir("test/gen");
+
+        Project project = ProjectBuilder.builder().build();
+        genTask = project.getTasks().create("genStructure", GenerateTask.class);
     }
 
     @Test

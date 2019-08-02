@@ -13,7 +13,7 @@ public class JavaStructureGeneratorTest {
     @BeforeMethod
     public void setUp() throws Exception {
         ext = new GeneratePluginExtension();
-        ext.setPackageString("net.mreunionlabs.gen");
+        ext.setPackageString("net.mreunionlabs.test");
         ext.setJavaDir(".");
     }
 
