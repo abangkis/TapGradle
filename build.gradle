@@ -2,7 +2,8 @@ group 'net.mreunionlabs'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'maven'
-apply plugin: 'groovy'
+apply plugin: 'kotlin'
+//apply plugin: 'groovy'
 
 repositories {
     mavenCentral()
@@ -11,10 +12,33 @@ repositories {
 
 dependencies {
     compile gradleApi()
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+//    compile 'org.codehaus.groovy:groovy-all:2.3.11'
     compile 'com.helger:jcodemodel:2.8.5'
-    compile 'org.apache.tapestry:tapestry-core:5.4.1'
+    compile 'org.apache.tapestry:tapestry-core:5.4.4'
     compile 'org.jdom:jdom2:2.0.6'
+    compile 'org.testng:testng:6.14.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+buildscript {
+    ext.kotlin_version = '1.3.41'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 

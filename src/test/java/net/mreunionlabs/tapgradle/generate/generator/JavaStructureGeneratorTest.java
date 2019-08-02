@@ -1,11 +1,8 @@
 package net.mreunionlabs.tapgradle.generate.generator;
 
 import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension;
-import org.apache.tools.ant.taskdefs.Java;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * Created by abangkis on 6/16/2016.

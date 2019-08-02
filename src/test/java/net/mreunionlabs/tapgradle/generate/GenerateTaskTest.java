@@ -21,8 +21,8 @@ public class GenerateTaskTest {
         genTask = project.getTasks().create("genStructure", GenerateTask.class);
 
         ext = new GeneratePluginExtension();
-        ext.setPackageString("net.mreunionlabs.gen");
-        ext.setJavaDir(".");
+        ext.setPackageString("net.mreunionlabs.test");
+        ext.setJavaDir("test/gen");
     }
 
     @Test
