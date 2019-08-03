@@ -21,7 +21,7 @@ open class GenerateTask : DefaultTask() {
         AppModuleGenerator().createFile(ext)
         JavaStructureGenerator().createDirectories(ext)
 
-        WebXMLGenerator().createFile(ext)
+        WebXmlGenerator().createFile(ext)
         //
         //        String message = extension.getMessage();
         //        HelloWorld helloWorld = new HelloWorld(message);

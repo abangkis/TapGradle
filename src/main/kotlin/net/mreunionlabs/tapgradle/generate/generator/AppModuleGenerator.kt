@@ -19,8 +19,7 @@ import java.util.UUID
  * Created by abangkis on 3/19/2016.
  */
 class AppModuleGenerator {
-    private var ext: GeneratePluginExtension? = null
-
+    private lateinit var ext: GeneratePluginExtension
 
     // E:\data\IDEA-workspace\SIPPS\src\main\java\net\mreunionlabs\sipps\server\services
     fun createFile(ext: GeneratePluginExtension) {
@@ -28,7 +27,7 @@ class AppModuleGenerator {
         println("Generating app module class")
 
         val packageString = ext.packageString
-        if (packageString != null && "" != packageString) {
+        if ("" != packageString) {
             val cm = JCodeModel()
             try {
                 val javaFolder = File(ext.javaDir)

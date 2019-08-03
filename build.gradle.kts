@@ -35,6 +35,7 @@ dependencies {
     implementation("com.helger:jcodemodel:2.8.5")
     testImplementation("junit:junit:4.12")
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.3.2")
+    testImplementation(gradleTestKit())
 }
 
 // must have line for kotlin test. Otherwise you will have No tests found exception

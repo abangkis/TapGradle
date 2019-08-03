@@ -13,7 +13,7 @@ import java.io.IOException
 /**
  * Created by abangkis on 05-Sep-16.
  */
-class WebXMLGenerator {
+class WebXmlGenerator {
 
     fun createFile(ext: GeneratePluginExtension) {
         try {
