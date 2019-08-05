@@ -1,4 +1,4 @@
-package net.mreunionlabs.tapgradle.generate.generator
+package net.mreunionlabs.tapgradle.generate.structure
 
 import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension
 import org.jdom2.Document

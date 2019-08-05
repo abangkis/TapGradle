@@ -1,4 +1,4 @@
-package net.mreunionlabs.tapgradle.generate.generator
+package net.mreunionlabs.tapgradle.generate.structure
 
 import com.helger.jcodemodel.*
 import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension

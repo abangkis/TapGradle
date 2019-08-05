@@ -1,10 +1,10 @@
 package net.mreunionlabs.tapgradle.generate
 
-import net.mreunionlabs.tapgradle.generate.generator.*
+import net.mreunionlabs.tapgradle.generate.structure.*
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
-open class GenerateTask : DefaultTask() {
+open class GenerateStructureTask : DefaultTask() {
     private var greeting = "Generating Tapestry 5.4 structure"
 
     @TaskAction

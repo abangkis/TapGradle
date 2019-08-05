@@ -1,4 +1,4 @@
-package net.mreunionlabs.tapgradle.generate.generator
+package net.mreunionlabs.tapgradle.generate.structure
 
 import io.kotlintest.TestCase
 import io.kotlintest.specs.StringSpec
@@ -6,7 +6,7 @@ import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 
-class AppModuleGeneratorTest : StringSpec() {
+class JavaStructureGeneratorTest : StringSpec() {
     private lateinit var project: Project
     private lateinit var ext: GeneratePluginExtension
 
@@ -19,7 +19,7 @@ class AppModuleGeneratorTest : StringSpec() {
 
     init {
         "create appmodule test should run" {
-            AppModuleGenerator().createFile(ext)
+            JavaStructureGenerator().createDirectories(ext)
         }
     }
 }

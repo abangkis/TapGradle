@@ -1,4 +1,4 @@
-package net.mreunionlabs.tapgradle.generate.generator
+package net.mreunionlabs.tapgradle.generate.structure
 
 import io.kotlintest.TestCase
 import io.kotlintest.specs.StringSpec
@@ -6,7 +6,7 @@ import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 
-class WebXmlGeneratorTest : StringSpec(){
+class AppModuleGeneratorTest : StringSpec() {
     private lateinit var project: Project
     private lateinit var ext: GeneratePluginExtension
 
@@ -14,12 +14,12 @@ class WebXmlGeneratorTest : StringSpec(){
         project = ProjectBuilder.builder().build()
         ext = GeneratePluginExtension()
         ext.packageString = "net.mreunionlabs.test"
-        ext.webAppDir = "gen/webapp"
+        ext.javaDir = "gen/java"
     }
 
     init {
-        "create web xml file test should run" {
-            WebXmlGenerator().createFile(ext)
+        "create appmodule test should run" {
+            AppModuleGenerator().createFile(ext)
         }
     }
 }

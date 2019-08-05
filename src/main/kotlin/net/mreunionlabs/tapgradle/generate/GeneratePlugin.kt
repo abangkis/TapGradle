@@ -7,7 +7,8 @@ class GeneratePlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with(project) {
             extensions.create("genExt", GeneratePluginExtension::class.java)
-            tasks.create("genStructure", GenerateTask::class.java)
+            tasks.create("genStructure", GenerateStructureTask::class.java)
+            tasks.create("genLayout", GenerateLayoutTask::class.java)
         }
     }
 }
