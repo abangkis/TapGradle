@@ -1,3 +1,7 @@
+NOTES
+- entah kenapa gak bisa ambil kotlinx-html dari jcenter atau maven jadi kita pake flat dir jar saja
+- manfaatin plugin untuk merubah html jadi kotlinx dsl. jadi gak buat manual
+
 TODO
 - generate index page
 - generate layout component
@@ -19,9 +23,6 @@ Update task to
 - Generate Layout component
 - RequireJS sample
 
-
 // install to maven local using gradle install
 
-// import eclipse todo
-we should import it and put the .properties file to the appropriate folder
 

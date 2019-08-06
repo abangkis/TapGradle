@@ -19,7 +19,11 @@ gradlePlugin {
 }
 
 repositories {
+//    mavenCentral()
     jcenter()
+    flatDir {
+        dirs("libs")
+    }
 }
 
 publishing {
@@ -33,6 +37,7 @@ dependencies {
     implementation("org.apache.tapestry:tapestry-core:5.4.4")
     implementation("org.jdom:jdom2:2.0.6")
     implementation("com.helger:jcodemodel:2.8.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.6.12")
     testImplementation("junit:junit:4.12")
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.3.2")
     testImplementation(gradleTestKit())
