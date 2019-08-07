@@ -1,12 +1,17 @@
 package net.mreunionlabs.tapgradle.generate.page
 
-import com.grosner.kpoet.*
-import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension
-import java.io.File
-import kotlinx.html.*
+import com.helger.jcodemodel.JClassAlreadyExistsException
+import com.helger.jcodemodel.JCodeModel
+import kotlinx.html.body
 import kotlinx.html.consumers.filter
+import kotlinx.html.h1
+import kotlinx.html.html
 import kotlinx.html.stream.appendHTML
+import kotlinx.html.title
+import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension
 import net.mreunionlabs.tapgradle.generate.util.PackageDirectoryCreator
+import java.io.File
+import java.io.IOException
 
 class IndexGenerator {
 
@@ -21,16 +26,17 @@ class IndexGenerator {
         val packageString = ext.packageString
         if ("" != packageString) {
 
-            javaFile("$packageString.pages") {
-                `class`("Index") { modifiers(public, final)
-//                    `private final field`(String::class, "title") { `@`(Property::class), `@`(Parameter::class) } // can add annotations on fields
-//                    field(`@`(Nullable::class), String::class, "android") { `=`("THE BEST".S) } // or this way
-
-//                    `public static`(TypeName.VOID, "main",
-//                            param(Array<String>::class, "args")) {
-//                        statement("\$T.out.println(${"Hello, JavaPoet!"}.S)", System::class.java)
-                }
-            }.writeTo(File(ext.javaDir))
+            val cm = JCodeModel()
+            try {
+                val javaFolder = File(ext.javaDir)
+                javaFolder.mkdirs()
+                cm._class("$packageString.pages.Index")
+                cm.build(javaFolder)
+            } catch (e: JClassAlreadyExistsException) {
+                e.printStackTrace()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
 
         } else {
             System.err.println("Index GEN: package is empty")
@@ -51,19 +57,6 @@ class IndexGenerator {
         val resDir = File(ext.resDir)
         val pages = PackageDirectoryCreator.createSubpackageDir(resDir, ext, "pages")
         File(pages, "Index.tml").bufferedWriter().use { out -> out.write(text) }
-
-//        val components = File(packageRoot, "components")
-//        components.mkdir()
-
-//        val text2 = buildString {
-//            //            appendln("<!DOCTYPE html>")
-//            appendHTML().html {
-//                body {
-//                    a("http://kotlinlang.org") { +"link" }
-//                }
-//            }
-//            appendln()
-//        }
     }
 
 }

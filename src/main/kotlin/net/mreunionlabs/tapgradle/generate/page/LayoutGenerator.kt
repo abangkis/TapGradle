@@ -109,7 +109,7 @@ class LayoutGenerator {
         }.replaceFirst("xmlns=", "xmlns:t=")
 
         val resDir = File(ext.resDir)
-        val pages = PackageDirectoryCreator.createSubpackageDir(resDir, ext, "pages")
+        val pages = PackageDirectoryCreator.createSubpackageDir(resDir, ext, "components")
         val index = File(pages, "Layout.tml")
 
         index.bufferedWriter().use { out -> out.write(text) }

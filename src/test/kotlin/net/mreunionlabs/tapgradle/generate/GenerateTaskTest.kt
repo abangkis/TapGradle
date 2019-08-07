@@ -40,8 +40,8 @@ class GenerateTaskTest : StringSpec() {
             //fixme why setting ext programatically not working?
 
             val structureTask = project.tasks.create("genStructure", GenerateStructureTask::class.java)
-            val layoutTask = project.tasks.create("genLayout", GenerateLayoutTask::class.java)
             structureTask.generate()
+            val layoutTask = project.tasks.create("genLayout", GenerateLayoutTask::class.java)
             layoutTask.generate()
         }
     }
