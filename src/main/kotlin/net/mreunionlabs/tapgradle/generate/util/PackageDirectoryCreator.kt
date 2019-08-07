@@ -1,5 +1,6 @@
 package net.mreunionlabs.tapgradle.generate.util
 
+import net.mreunionlabs.tapgradle.generate.GeneratePluginExtension
 import java.io.File
 
 /**
@@ -17,5 +18,14 @@ object PackageDirectoryCreator {
             }
         }
         return packageDir
+    }
+
+    fun createSubpackageDir(root: File, ext: GeneratePluginExtension, dir: String): File {
+        val packageString = ext.packageString
+        val packageRoot = PackageDirectoryCreator.createPackageDir(root, packageString)
+        val pages = File(packageRoot, dir)
+        pages.mkdirs() // fixme we do a lot of reapeted mkdirs on the same path but it's okay for now
+
+        return pages
     }
 }
