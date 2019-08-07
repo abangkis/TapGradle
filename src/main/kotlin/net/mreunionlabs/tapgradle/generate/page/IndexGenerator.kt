@@ -13,13 +13,13 @@ import net.mreunionlabs.tapgradle.generate.util.PackageDirectoryCreator
 class IndexGenerator {
 
     fun createFile(ext: GeneratePluginExtension) {
-        println("Generating Index.java")
-        genIndexJava(ext)
-        genIndexTml(ext)
+        println("Generating Index Page")
+        genJava(ext)
+        genTml(ext)
 
     }
 
-    private fun genIndexJava(ext: GeneratePluginExtension) {
+    private fun genJava(ext: GeneratePluginExtension) {
         val packageString = ext.packageString
         if ("" != packageString) {
             val cm = JCodeModel()
@@ -38,22 +38,20 @@ class IndexGenerator {
             }
 
         } else {
-            System.err.println("AppModule GEN: package is empty")
+            System.err.println("Index GEN: package is empty")
         }
     }
 
-    private fun genIndexTml(ext: GeneratePluginExtension) {
+    private fun genTml(ext: GeneratePluginExtension) {
         val text = buildString {
             appendHTML().filter { if (it.tagName == "body") SKIP else PASS }.html(namespace = "http://tapestry.apache.org/schema/tapestry_5_4.xsd") {
                 attributes["t:type"] = "Layout"
-//            attributes["xmlns"] = "http://tapestry.apache.org/schema/tapestry_5_4.xsd"
-//            attributes["xmlns"] = "tapestry:parameter"
                 title = "Bot Crow"
                 body {
                     h1 { +"Hello Crow" }
                 }
             }
-        }
+        }.replaceFirst("xmlns=", "xmlns:t=")
 
         val resDir = File(ext.resDir)
         val packageString = ext.packageString
