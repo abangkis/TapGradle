@@ -7,6 +7,8 @@ Gradle plugin for creating tapestry 5.4 structure. It will generate the necessar
 **this plugin hasn't been published to maven central**
 **and we also moved from build.gradle(groovy) to build.gradle.kts(kotlin) format**
 
+for old [groovy script](https://github.com/abangkis/TapGradle/edit/master/README-groovy.md)
+
 Because this plugin hasn't been publish to maven central, you need to publish it your self to your maven local repository
 * clone this project
 * open the gradle window in TapGradle Project
